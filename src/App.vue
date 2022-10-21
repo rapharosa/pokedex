@@ -2,9 +2,11 @@
   <div id="app">
     <main>
       <section>
+        <input v-model="search" placeholder="Busque um Pokemon" />
+        <p>{{search}}</p>
           <div>
             <div
-              v-for="pokemon in pokemons.slice(0, 50)" 
+              v-for="pokemon in filtered_pokemons" 
               :key="pokemon.name"
             >
               <div>
@@ -31,7 +33,8 @@ export default {
 
   data: () => {
     return{
-      pokemons: []
+      pokemons: [],
+      search: '',
     }
   },
 
@@ -47,6 +50,13 @@ export default {
    get_name(pokemon) {
     return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
    } 
+  },
+  computed: {
+    filtered_pokemons(){
+      return this.pokemons.filter((item) => {
+        return item.name.includes(this.search)
+      })
+    }
   }
 }
 </script>
