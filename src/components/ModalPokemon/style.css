@@ -9,14 +9,15 @@
 }
   
 .card{
-width: 800px;
-height: 500px;
+width: 90%;
+max-width: 500px;
+height: 65%;
 background: linear-gradient(139deg, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 40px;
-padding: 24px 40px;
+gap: 24px;
+padding: 8px;
 margin: 10px 0;
 border-radius: 10px;
 box-shadow: 7px 2px 34px -1px rgba(0,0,0,0.63);
@@ -35,12 +36,12 @@ z-index: 101;
 .card section {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 }
 
 
 .card section img{
-    max-width: 200px;
+    max-width: 40%;
 }
 
 .card button{
@@ -65,15 +66,16 @@ z-index: 101;
 .card .info{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    max-width: 350px;
 }
 
 .card .info div{
     background: var(--branco-fundo);
     box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.63);
     border-radius: 8px;
-    width: 35%;
+    width: 60%;
 }
 
 .card .info div p{

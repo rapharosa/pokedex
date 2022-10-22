@@ -50,7 +50,6 @@ export default {
   mounted () {
     axios.get('https://pokeapi.co/api/v2/pokemon?limit=10000').then((response) => {
       this.pokemons = response.data.results;
-      console.log(this.pokemon?.stats[0].stat.name)
     })
   },
   methods: {
@@ -83,7 +82,7 @@ export default {
       }
       return this.pokemons.filter((item) => {
           return item.name.includes(this.search.toLowerCase())
-      }).slice(0, 10);
+      }).slice(0, 20);
     },
 
     selected_pokemon_name(){
