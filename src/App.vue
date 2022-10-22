@@ -28,8 +28,8 @@
 
 <script>
 import axios from 'axios';
-import ModalPokemon from './components/ModalPokemon/ModalPokemon.vue'
-import CabecalhoPokedex from './components/Cabecalho/CabecalhoPokedex.vue'
+import ModalPokemon from './components/ModalPokemon/ModalPokemon.vue';
+import CabecalhoPokedex from './components/Cabecalho/CabecalhoPokedex.vue';
 
 export default {
   name: 'App',
@@ -70,7 +70,7 @@ export default {
    },
    onCloseModal(){
     this.selected_pokemon = null;
-   }
+   },
 
   },
   computed: {
@@ -86,7 +86,7 @@ export default {
     selected_pokemon_name(){
       if (this.selected_pokemon){
         return this.selected_pokemon.name
-      } return 'Carregando'
+      } return 'Carregando';
     }
   }
 }
