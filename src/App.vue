@@ -1,11 +1,15 @@
 <template>
   <div id="app">
+
     <CabecalhoPokedex titulo='Pokedex'/>
+    
     <main>
+
       <section class="busca">
         <label for="pesquisa">Pokemon:</label>
         <input name="pesquisa" v-model="search" placeholder="Busque um Pokemon" />
       </section>
+
       <section class="sessao-lista">
         <div
           v-for="pokemon in filtered_pokemons" 
@@ -19,6 +23,7 @@
               :alt="pokemon.name"
             >
           </div>
+
         </div>
       </section>
         <ModalPokemon :pokemon="selected_pokemon" :closeModal="onCloseModal" :visible="!!selected_pokemon"/>
@@ -52,6 +57,7 @@ export default {
       this.pokemons = response.data.results;
     })
   },
+
   methods: {
     get_id(pokemon) {
       return Number(pokemon.url.split('/')[6])
@@ -68,11 +74,13 @@ export default {
       this.selected_pokemon = response.data
     });
    },
+
    onCloseModal(){
     this.selected_pokemon = null;
    },
 
   },
+
   computed: {
     filtered_pokemons(){
       if(!this.search){
@@ -90,6 +98,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style src="./style.css"/>
