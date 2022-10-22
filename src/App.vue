@@ -67,11 +67,9 @@ export default {
     .then((response) => {
       this.selected_pokemon = response.data
     });
-    console.log('foi');
    },
    onCloseModal(){
     this.selected_pokemon = null;
-    console.log('fechou');
    }
 
   },
