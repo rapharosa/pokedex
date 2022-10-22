@@ -21,7 +21,6 @@
           </div>
         </div>
       </section>
-
         <ModalPokemon :pokemon="selected_pokemon" :closeModal="onCloseModal" :visible="!!selected_pokemon"/>
     </main>
   </div>
@@ -51,6 +50,7 @@ export default {
   mounted () {
     axios.get('https://pokeapi.co/api/v2/pokemon?limit=10000').then((response) => {
       this.pokemons = response.data.results;
+      console.log(this.pokemon?.stats[0].stat.name)
     })
   },
   methods: {

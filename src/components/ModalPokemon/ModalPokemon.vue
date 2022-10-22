@@ -9,7 +9,13 @@
         <section>
           <h1>{{pokemon?.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}}</h1>
         </section>
-        <img :src="pokemon?.sprites.other.dream_world.front_default || pokemon?.sprites.front_default" :alt="pokemon?.name">
+        <section class="info">
+          <img :src="pokemon?.sprites.other.dream_world.front_default || pokemon?.sprites.front_default " :alt="pokemon?.name">
+          <div>
+            <p v-for="stat in pokemon?.stats" :key="stat.slot"> {{ stat.stat.name }}: {{ stat.base_stat }}</p>
+          </div>
+        </section>
+
         <button @click="closeModal()">Fechar</button>
       </div>
     </section>
