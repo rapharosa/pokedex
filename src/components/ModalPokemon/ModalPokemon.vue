@@ -1,7 +1,7 @@
 <template>
-  <div class="modal">
+  <div>
     <section name="fade" >
-      <div class="teste-fade" v-if="!!visible"></div>
+      <div class="fade-visivel" v-if="!!visible"></div>
     </section>
 
     <section>
